@@ -11,7 +11,7 @@ const userTableRow = (props) => {
     const { _id, name,email, amount} = props.obj;
     
     const deleteUser = () => {
-        axios.delete("http://localhost:3000/users/delete-user/"+ _id).then((res)=>{
+        axios.delete("https://basic-banking-website-wbll.onrender.com/users/delete-user/"+ _id).then((res)=>{
             if(res.status === 200 ){
                 alert("User successfully deleted");
           window.location.reload();
@@ -27,7 +27,7 @@ const userTableRow = (props) => {
     const [formValues, setFormValues] = useState({name1:name, name2:'',amount:''});
     const [formValues2, setFormValues2] = useState({name:"", email:'',amount:''});
     useEffect(()=>{
-        axios.get("http://localhost:3000/users/").then(({data})=>{
+        axios.get("https://basic-banking-website-wbll.onrender.com/users/").then(({data})=>{
             setUser(data);
         }).catch((err)=>{
             console.log(err);
@@ -80,7 +80,7 @@ const userTableRow = (props) => {
         } 
         else if(formValues.name2 == formValues.name1) alert("sender and receiver can't be same")
         else{
-            axios.post("http://localhost:3000/users/create-transaction", formValues).then(res => {
+            axios.post("https://basic-banking-website-wbll.onrender.com/users/create-transaction", formValues).then(res => {
             if(res.status === 200){
                 alert('Transaction Successfull')
                 window.location = "/"
