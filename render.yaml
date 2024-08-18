@@ -1,0 +1,15 @@
+static:
+  # The path to your build output directory, adjust accordingly
+  publish: ./build
+  # Configure fallback routing
+  routes:
+    - type: rewrite
+      source: /.*
+      destination: /index.html
+
+services:
+  - type: web
+    name: basic-banking-frontend
+    env: static
+    buildCommand: npm run build
+    staticPublishPath: build
