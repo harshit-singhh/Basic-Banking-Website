@@ -9,7 +9,7 @@ const createUser = ()=>{
 
     const onSubmit = userObject => {
         axios
-          .post("http://localhost:3000/users/create-user", userObject)
+          .post("https://basic-banking-website-wbll.onrender.com/users/create-user", userObject)
           .then((res) => {
             if (res.status === 200) {
               alert("User added Successfully");
