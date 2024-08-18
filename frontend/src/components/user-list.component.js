@@ -8,11 +8,14 @@ const userList =()=>{
     const [user, setUser] = useState([]);
 
     useEffect(()=>{
-        axios.get("http://localhost:3000/users/").then(({data})=>{
+        axios
+          .get(`${process.env.BACKEND_URL}users/`)
+          .then(({ data }) => {
             setUser(data);
-        }).catch((err)=>{
+          })
+          .catch((err) => {
             console.log(err);
-        });
+          });
     },[]);
     
     const DataTable = () => {
