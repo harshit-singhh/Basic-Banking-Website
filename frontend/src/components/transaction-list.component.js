@@ -8,7 +8,7 @@ const transactionList =()=>{
     const [user, setUser] = useState([]);
 
     useEffect(()=>{
-        axios.get("http://localhost:3000/users/transaction-history").then(({data})=>{
+        axios.get("https://basic-banking-website-wbll.onrender.com/users/transaction-history").then(({data})=>{
             setUser(data);
         }).catch((err)=>{
             console.log(err);
