@@ -8,7 +8,7 @@ const userList =()=>{
     const [user, setUser] = useState([]);
 
     useEffect(()=>{
-        axios.get("http://localhost:3000/users/").then(({data})=>{
+        axios.get("https://basic-banking-website-wbll.onrender.com/users/").then(({data})=>{
             setUser(data);
         }).catch((err)=>{
             console.log(err);
